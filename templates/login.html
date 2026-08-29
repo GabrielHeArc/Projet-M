@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Acces prive{% endblock %}
+{% block content %}
+<section class="panel">
+  <p>ESPACE PRIVE</p>
+  <h1>Entre le code secret pour continuer</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}
+  {% endwith %}
+  Attention le clavier est farceur 😊
+</br>
+  1234 -> 4213
+</br>
+</br>
+  <form method="post">
+    <label for="password">Code secret</label>
+    <input id="password" name="password" inputmode="numeric" pattern="[0-9]*" autocomplete="current-password" required autofocus>
+    <div class="actions"><button type="submit">Ouvrir la page</button></div>
+  </form>
+</section>
+<script>
+  const passwordInput = document.getElementById("password");
+
+  passwordInput.addEventListener("input", () => {
+    passwordInput.value = passwordInput.value.replace(/\D/g, "").split("").reverse().join("");
+  });
+</script>
+{% endblock %}

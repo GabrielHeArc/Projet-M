@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Page privee{% endblock %}</title>
+  <style>
+    :root { color-scheme: light; font-family: Georgia, serif; color: #17211b; background: #e8eee7; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: radial-gradient(circle at top right, #d5e4d2, #e8eee7 55%); }
+    main { width: min(92vw, 760px); padding: 3rem 0; }
+    .panel { background: #fffdf8; border: 1px solid #c8d3c6; padding: clamp(1.5rem, 5vw, 3rem); box-shadow: 12px 12px 0 #c4d4be; }
+    h1 { margin-top: 0; font-size: clamp(2rem, 6vw, 4rem); line-height: 1; letter-spacing: 0; }
+    p { color: #5c6a60; line-height: 1.6; }
+    label { display: block; font-weight: bold; margin-bottom: .5rem; }
+    input, textarea { box-sizing: border-box; width: 100%; border: 1px solid #aebcaf; background: #f7faf5; color: #17211b; padding: .9rem; font: inherit; font-size: 1rem; }
+    textarea { min-height: 18rem; resize: vertical; line-height: 1.6; }
+    button { border: 0; background: #1f4d35; color: white; padding: .85rem 1.2rem; font: inherit; cursor: pointer; }
+    button:hover { background: #163a27; }
+    .actions { display: flex; gap: 1rem; align-items: center; margin-top: 1rem; }
+    a { color: #1f4d35; }
+    .flash { padding: .75rem 1rem; margin-bottom: 1.25rem; background: #f4dfb8; }
+    .flash.success { background: #d5ead5; }
+    .topline { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+  </style>
+</head>
+<body>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

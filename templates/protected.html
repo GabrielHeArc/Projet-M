@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Page protegee{% endblock %}
+{% block content %}
+<section class="panel">
+  <div class="topline">
+    <p>PAGE PROTEGEE</p>
+  </div>
+  <h1>Votre espace.</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}
+  {% endwith %}
+  <form method="post">
+
+  </form>
+
+</section>
+{% endblock %}
